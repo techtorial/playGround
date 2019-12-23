@@ -13,6 +13,8 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+<<<<<<< HEAD
+=======
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -117,5 +119,8 @@
             </plugin>
         </plugins>
     </build>
+
+
+>>>>>>> c8475eb711d13a3cb8fc6cc5f5416c16b6a2f0a7
 
 </project>
