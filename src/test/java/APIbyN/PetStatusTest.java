@@ -27,6 +27,8 @@ public class PetStatusTest {
         ByStatusPojo ByStatusPOJO = objectMapper.readValue(response.getEntity().getContent(), ByStatusPojo.class);
         int petId= ByStatusPOJO.getListOfPetsStatus().get(1).getId();
         System.out.println(petId);
+
+        System.out.println(" hello world");
     }
 
 }
