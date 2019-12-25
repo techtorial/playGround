@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class FindStatus {
+public class GetPetsByStatus {
     @Test
     public void mystatus() throws IOException, URISyntaxException {
         ObjectMapper objectMapper = new ObjectMapper();///for deserialization we use ->Jackson library
@@ -28,19 +28,19 @@ public class FindStatus {
         uriBuilder.setScheme("https")
                 .setHost("petstore.swagger.io")
                 .setPath("pet/findByStatus")
-                .setCustomQuery("status");
+                .setCustomQuery("status=sold");
 
         // defining a Get method
         HttpGet httpGet = new HttpGet(uriBuilder.build());// it is class   also get  DEserilization
         httpGet.addHeader("Accept", "application/json");
-        //executing the api call
+        //executing the api call// checking status
         HttpResponse response = httpClient.execute(httpGet);
 
         //Assert.assertEquals(HttpStatus.SC_OK, response.getStatusLine().getStatusCode());
         // jackson libraries
-       FindStatusPojo findStatusPojo=objectMapper.readValue(response.getEntity().getContent(),FindStatusPojo.class);
-        //for (Map<String,Object> list:findStatusPojo.getStatus().) {
-        System.out.println(findStatusPojo);
+  PetstatusPojo petstatusPojo=objectMapper.readValue(response.getEntity().getContent(),PetstatusPojo.class);
+   String  petName=petstatusPojo.getListofpetsStatus().get(1).getId();
+        System.out.println(petName);
         }
 
 
