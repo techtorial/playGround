@@ -28,7 +28,7 @@ public class PetStatusTest {
         int petId= ByStatusPOJO.getListOfPetsStatus().get(1).getId();
         System.out.println(petId);
 
-        System.out.println(" hello world");
+        System.out.println(" hello ");
     }
 
 }
